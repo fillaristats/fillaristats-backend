@@ -1,7 +1,10 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
 
-const {sequelize, Station, LogEntry} = require('./models/index.js')()
+const {Station} = require('./models/index.js')()
+
+app.use(cors())
 
 app.get('/api/stations', (req, res) => {
   Station.findAll({

@@ -1,10 +1,10 @@
-const request = require('request');
+const request = require('request')
 
-function fetchStations(cb) {
+function fetchStations (cb) {
   const options = {
     url: 'https://api.digitransit.fi/routing/v1/routers/hsl/index/graphql',
     json: {
-      "query": `{
+      'query': `{
   bikeRentalStations {
     stationId
     name
@@ -13,11 +13,11 @@ function fetchStations(cb) {
     lat
     lon
   }
-}`,
+}`
     },
-    method: 'POST',
-  };
-  request(options, cb);
+    method: 'POST'
+  }
+  request(options, cb)
 }
 
-module.exports = fetchStations;
+module.exports = fetchStations
